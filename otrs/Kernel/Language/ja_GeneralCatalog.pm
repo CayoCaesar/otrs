@@ -1,0 +1,52 @@
+# --
+# Copyright (C) 2001-2018 OTRS AG, http://otrs.com/
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+package Kernel::Language::ja_GeneralCatalog;
+
+use strict;
+use warnings;
+use utf8;
+
+sub Data {
+    my $Self = shift;
+
+    # Template: AAAGeneralCatalog
+    $Self->{Translation}->{'Functionality'} = '機能性';
+
+    # Template: AdminGeneralCatalog
+    $Self->{Translation}->{'General Catalog Management'} = 'ジェネラル・カタログ管理';
+    $Self->{Translation}->{'Items in Class'} = '';
+    $Self->{Translation}->{'Edit Item'} = '';
+    $Self->{Translation}->{'Add Class'} = '';
+    $Self->{Translation}->{'Add Item'} = '';
+    $Self->{Translation}->{'Add Catalog Item'} = 'カタログ項目を追加';
+    $Self->{Translation}->{'Add Catalog Class'} = 'カタログクラスを追加';
+    $Self->{Translation}->{'Catalog Class'} = 'カタログクラス';
+    $Self->{Translation}->{'Edit Catalog Item'} = 'カタログ・アイテムを修正';
+
+    # SysConfig
+    $Self->{Translation}->{'Comment 2'} = '';
+    $Self->{Translation}->{'Create and manage the General Catalog.'} = 'ジャネラル・カタログの作成と管理';
+    $Self->{Translation}->{'Define the general catalog comment 2.'} = '';
+    $Self->{Translation}->{'Define the group with permissions.'} = '権限を持つグループを定義します。';
+    $Self->{Translation}->{'Defines the URL JS Color Picker path.'} = 'URL JS カラーピッカーのパスを定義します。';
+    $Self->{Translation}->{'Frontend module registration for the AdminGeneralCatalog configuration in the admin area.'} =
+        '管理エリアでのAdminGeneralCatalogのフロントエンドモジュールの登録';
+    $Self->{Translation}->{'General Catalog'} = 'ジェネラル・カタログ';
+    $Self->{Translation}->{'Parameters for the example comment 2 of the general catalog attributes.'} =
+        'ジェネラル・カタログ属性のコメント例 2　の設定値';
+    $Self->{Translation}->{'Parameters for the example permission groups of the general catalog attributes.'} =
+        'ジェネラル・カタログ属性の権限グループ　の設定値';
+
+
+    push @{ $Self->{JavaScriptStrings} // [] }, (
+    );
+
+}
+
+1;

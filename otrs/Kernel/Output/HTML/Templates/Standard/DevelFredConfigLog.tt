@@ -1,0 +1,38 @@
+# --
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+<div class="DevelFredBox">
+    <h1>
+        Configuration Log
+        <span class="FredToolBar">
+            <i class="fa fa-search FredSearch" title="Toggle Search Bar"></i>
+            <i class="fa fa-minus FredMinimize" title="Minimize"></i>
+            <i class="fa fa-times FredClose" title="Close"></i>
+        </span>
+    </h1>
+    <div class="DevelFredBoxContent" id="DevelFredConfigLog">
+        <div class="FredQuickSearch">
+            <input type="text" placeholder="Search for..." />
+            <i class="fa fa-times"></i>
+        </div>
+        <table class="FredTableDefault">
+            <thead>
+                <tr>
+                    <th>Calls</th>
+                    <th>Config</th>
+                    <th>Status</th>
+                    <th>Package</th>
+                </tr>
+            </thead>
+[% Data.HTMLLines %]
+            <tr class="Hidden FilterMessage">
+                <td colspan="4">No Items found.</td>
+            </tr>
+        </table>
+    </div>
+</div>
