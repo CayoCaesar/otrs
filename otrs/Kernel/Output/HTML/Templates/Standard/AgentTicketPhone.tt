@@ -222,7 +222,7 @@
                         <a href="#" id="OptionCustomer">[ [% Translate("User") | html %] ]</a>
 [% RenderBlockEnd("OptionCustomer") %]
 						<!--Se colocará el acceso directo para la autorización de reemplazos-->
-						<a href="#" id="OptionCustomer">[ [% Translate("User") | html %] ]</a>
+						<a href="#" id="reemplazo">[ [% Translate("Centro de Acopio") | html %] ]</a>
 <!-- OutputFilterHook_TicketOptionsEnd -->
 
                     </div>
