@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="1.0" init="Application">
+    <Setting Name="Frontend::Module###AgentInventario" Required="1" Valid="1">
+        <Description Lang="en">Inventario de centro de acopio.</Description>
+        <Description Lang="de">Inventario de centro de acopio.</Description>
+        <Group>Inventario</Group>
+        <SubGroup>Frontend::Agent::AgentInventario</SubGroup>
+        <Setting>
+			<FrontendModuleReg>
+                <Title>Inventario</Title>
+                <Group>users</Group>
+                <Description>Inventario</Description>
+                <NavBarName>Inventario</NavBarName>
+                <NavBar>
+                    <Description>Inventario</Description>
+                    <Name>Inventario</Name>
+                    <Image>overview.png</Image>
+                    <Link>Action=AgentInventario</Link>
+                    <NavBar>Inventario</NavBar>
+                    <Type>Menu</Type>
+                    <Prio>8400</Prio>
+                    <Block>ItemArea</Block>
+                </NavBar>
+                <NavBar>
+                    <GroupRo>Inv</GroupRo>
+                    <Description>Explorer</Description>
+                    <Name>Explorer</Name>
+                    <Image>list.png</Image>
+                    <Link>Action=AgentInventario</Link>
+                    <Type></Type>
+                    <Block></Block>
+                    <NavBar>Centro de Acopio</NavBar>
+                    <AccessKey>c</AccessKey>
+                    <Prio>100</Prio>
+                </NavBar>				
+            </FrontendModuleReg>
+        </Setting>
+    </Setting>
+	<Setting Name="Frontend::Output::FilterElementPre###Inventario" Required="0" Valid="1">
+		<Description Lang="en">Defines where the 'Insert Inventario' link will be displayed.</Description>
+		<Group>Inventario</Group>
+		<SubGroup>Frontend::Agent</SubGroup>
+        <Setting>
+            <Hash>
+                <Item Key="Module">Kernel::Output::HTML::OutputFilterInventario</Item>
+                <Item Key="Debug">0</Item>
+                <Item Key="Templates">
+					<Item Key="AgentTicketPhone">1</Item>
+				</Item>
+			</Hash>
+		</Setting>
+	</Setting>
+</otrs_config>
