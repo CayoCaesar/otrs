@@ -207,7 +207,7 @@
                     <label class="Mandatory" for="Subject"><span class="Marker">*</span> [% Translate("Subject") | html %]:</label>
                     <!--Se colocará este valor de solo lectura-->
                     <div class="Field">
-                        <input class="W75pc Validate_Required [% Data.SubjectInvalid | html %]" type="text" name="Subject" id="Subject" value="[% Data.Subject | html %]" disabled/>
+                        <input class="W75pc Validate_Required [% Data.SubjectInvalid | html %]" type="text" name="Subject" id="Subject" value="[% Data.Subject | html %]" readonly/>
                         <div id="SubjectError" class="TooltipErrorMessage">
                             <p>[% Translate("This field is required.") | html %]</p>
                         </div>
