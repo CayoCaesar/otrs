@@ -148,40 +148,30 @@ X-OTRS-Login: [% Env("Baselink") %]
                             <input type="hidden" name="Lang" value="[% Env("UserLanguage") | html %]"/>
                             <input type="hidden" name="TimeZoneOffset" id="TimeZoneOffset" value=""/>
                             <fieldset>
-                                <div>
+                               
                                     <label for="User" class="InvisibleText Mandatory">
                                         <span class="Marker">*</span> [% Translate("Username") | html %]
                                     </label>
                                     <input autocorrect="off" autocomplete="username" placeholder="[% Translate("Username") | html %]" autocapitalize="off" type="text" id="User" name="User" value="[% Data.User | html %]" class="W75pc Validate_Required" />
                                     <div id="UserError" class="TooltipErrorMessage" ><p>[% Translate("This field is required.") | html %]</p></div>
-                                </div>
-                                <div>
+                                
+								
                                     <label for="Password" class="InvisibleText Mandatory">
                                         <span class="Marker">*</span> [% Translate("Password") | html %]
                                     </label>
                                     <input type="password" autocomplete="current-password" placeholder="[% Translate("Password") | html %]" id="Password" name="Password" class="W75pc Validate_Required" />
                                     <div id="PasswordError" class="TooltipErrorMessage" ><p>[% Translate("This field is required.") | html %]</p></div>
-                                </div>
-                                <div class="Clear"></div>
-								<!------------------------------------------------------------------------------------------------------------------------------------------>
-									<div>
-									<label for="Nivel De soporte" class="InvisibleText Mandatory">
-                                        <span class="Marker">*</span> [% Translate("Nivel De soporte") | html %]
-                                    </label>
-									<select class="Primary CallForAction Fullsize Center" id="queue_id name="Nivel De soporte" size="2" title="Nivel De soporte">
+                                
+								<label>
+								<select class="W75pc Validate_Required Primary CallForAction Fullsize Center" id="queue_id name="Nivel De soporte" 	style="padding:5pt" title="Nivel De soporte">
 										<option>   Soporte de Nivel 1 </option>
 										<option>   Soporte de Nivel 2 </option>
 										<option>   Soporte de Nivel 3 </option>
 									</select>
-								</div>
-									<div class="Clear"></div>
-
-								
-								<div>
-									<label for="Sala" class="InvisibleText Mandatory">
-                                        <span class="Marker">*</span> [% Translate("Sala") | html %]
-                                    </label>
-									<select class="Primary CallForAction Fullsize Center" id="lastname name="Sala" size="2" title="Sala">
+							    </label>   
+						
+								<label>
+										<select class="W75pc Validate_Required Primary CallForAction Fullsize Center " id="lastname name="Sala" style="padding:5pt" title="Sala">
 										<option> Sala JD1.0  </option>
 										<option> Sala JD2.11 </option>
 										<option> Sala JD1.16 </option>
@@ -192,9 +182,11 @@ X-OTRS-Login: [% Env("Baselink") %]
 										<option> Sala JD2.13 </option>
 										<option> Sala JD1.18 </option>
 									</select>
-								</div>
-						
-							<!------------------------------------------------------------------------------------------------------------------------------------------>
+								</label>            
+
+									
+										
+									
 [% RenderBlockStart("AuthTwoFactor") %]
                                 <label for="TwoFactorToken" class="InvisibleText [% Data.MandatoryClass | html %]">
 [% RenderBlockStart("AuthTwoFactorMandatory") %]

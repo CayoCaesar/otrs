@@ -254,6 +254,11 @@ div.InputField_ToolbarContainer ul li a:hover {
     color: #aaa;
 }
 
+select {
+margin-top:8px;
+margin-bottom:8px;
+}
+
 /**
  * @subsection  jsTree theme
  */
