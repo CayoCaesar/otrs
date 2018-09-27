@@ -163,7 +163,38 @@ X-OTRS-Login: [% Env("Baselink") %]
                                     <div id="PasswordError" class="TooltipErrorMessage" ><p>[% Translate("This field is required.") | html %]</p></div>
                                 </div>
                                 <div class="Clear"></div>
+								<!------------------------------------------------------------------------------------------------------------------------------------------>
+									<div>
+									<label for="Nivel De soporte" class="InvisibleText Mandatory">
+                                        <span class="Marker">*</span> [% Translate("Nivel De soporte") | html %]
+                                    </label>
+									<select class="Primary CallForAction Fullsize Center" id="queue_id name="Nivel De soporte" size="2" title="Nivel De soporte">
+										<option>   Soporte de Nivel 1 </option>
+										<option>   Soporte de Nivel 2 </option>
+										<option>   Soporte de Nivel 3 </option>
+									</select>
+								</div>
+									<div class="Clear"></div>
 
+								
+								<div>
+									<label for="Sala" class="InvisibleText Mandatory">
+                                        <span class="Marker">*</span> [% Translate("Sala") | html %]
+                                    </label>
+									<select class="Primary CallForAction Fullsize Center" id="lastname name="Sala" size="2" title="Sala">
+										<option> Sala JD1.0  </option>
+										<option> Sala JD2.11 </option>
+										<option> Sala JD1.16 </option>
+										<option> Sala JD1.20 </option>
+										<option> Sala JD2.21 </option>
+										<option> Sala JD1.10 </option>
+										<option> Sala JD1.12 </option>
+										<option> Sala JD2.13 </option>
+										<option> Sala JD1.18 </option>
+									</select>
+								</div>
+						
+							<!------------------------------------------------------------------------------------------------------------------------------------------>
 [% RenderBlockStart("AuthTwoFactor") %]
                                 <label for="TwoFactorToken" class="InvisibleText [% Data.MandatoryClass | html %]">
 [% RenderBlockStart("AuthTwoFactorMandatory") %]
