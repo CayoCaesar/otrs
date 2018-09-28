@@ -220,7 +220,7 @@
                     <!--Aqui voy a colocar el acceso a centro de acopio-->
                     <label>Solicitud de Reemplazo</label>
                     <div class="Field">
-                    <a href="[%env(Baselink)%]?Action=AgentInventario" id="acopio" target=_blank>[ [% Translate("Centro de Acopio") | html %] ]</a>
+                    <a href="#" id="acopio" target=_blank onclick="window.open(this.href, this.target, 'width=300,height=400'); return false;">[ [% Translate("Centro de Acopio") | html %] ]</a>
                     </div>
                     <!--Aqui termina el campo de solitud de reemplazo-->
 
@@ -256,7 +256,7 @@
 
                     <label class="Mandatory" for="RichText"><span class="Marker">*</span> [% Translate("Text") | html %]:</label>
                     <div id="RichTextField" class="RichTextField" >
-<textarea id="RichText" class="RichText Validate_Required [% Data.RichTextInvalid | html %]" readonly name="Body" title="[% Translate("Message body") | html %]" rows="15" cols="[% Config("Ticket::Frontend::TextAreaNote") | html %]">[% Data.Body | html %]</textarea>
+                        <textarea   id="RichText" class="RichText Validate_Required [% Data.RichTextInvalid | html %]" name="Body" title="[% Translate("Message body") | html %]" rows="15" cols="[% Config("Ticket::Frontend::TextAreaNote") | html %]">[% Data.Body | html %]</textarea>
                         <div id="RichTextError" class="TooltipErrorMessage">
                             <p>[% Translate("This field is required.") | html %]</p>
                         </div>

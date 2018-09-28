@@ -1,56 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" ?>
- <otrs_config version="2.0" init="Application">
-    
-    <!--Registro el módulo de inventario (controlador) para el agente-->
-     <Setting Name="Frontend::Module###AgentInventario" Required="1" Valid="1">
-         <Description Translatable="1">Configuración para el módulo de inventario (agente)</Description>
-         <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
-         <Value>
-             <Item ValueType="FrontendRegistration">
-                 <Hash>
-                     <Item Key="Group">
-                         <Array>
-                             <Item>Inventario</Item>
-                         </Array>
-                     </Item>
-                     <Item Key="GroupRo">
-                         <Array>
-                         </Array>
-                     </Item>
-                     <Item Key="Description" Translatable="1">Inventario-Agente</Item>
-                     <Item Key="Title" Translatable="1">Inventario-Agente</Item>
-                     <Item Key="NavBarName">Inventario-Agente</Item>
-                 </Hash>
-             </Item>
-         </Value>
-     </Setting>
-
-    <!--Registro el módulo de inventario (controlador) para el administrador-->
-     <Setting Name="Frontend::Module###AdminInventario" Required="1" Valid="1">
-         <Description Translatable="1">Configuración para el módulo de inventario (administrador)</Description>
-         <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
-         <Value>
-             <Item ValueType="FrontendRegistration">
-                 <Hash>
-                     <Item Key="Group">
-                         <Array>
-                             <Item>Inventario</Item>
-                         </Array>
-                     </Item>
-                     <Item Key="GroupRo">
-                         <Array>
-                         </Array>
-                     </Item>
-                     <Item Key="Description" Translatable="1">Inventario-Admin</Item>
-                     <Item Key="Title" Translatable="1">Inventario-Admin</Item>
-                     <Item Key="NavBarName">Inventario-Admin</Item>
-                 </Hash>
-             </Item>
-         </Value>
-     </Setting>
-
-    <!--Confoguro el loader para el módulo de inventario(agente)-->
-     <Setting Name="Loader::Module::AgentInventario###002-Filename" Required="0" Valid="1">
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="1.0" init="Application">
+    <Setting Name="Frontend::Module###AgentInventario" Required="1" Valid="1">
+        <Description Translatable=1>Inventario de centro de acopio.</Description>
+        <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
+        <value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key=Title Translatable=1>AgentInventario</Item>
+                    <Item Key=Description Translatable=1>Define la configuración del Frontend de Inventario</Item>
+                    <Item Key=Group>
+                        <Array>
+                            <Item>User</Item>
+                        </Array>
+                    </Item>
+                </Hash>
+            </Item>
+        </value>
+    </Setting>
+    <Setting Name="Loader::Module::AgentInventario###002-Filename" Required="0" Valid="1">
          <Description Translatable="1">Loader module registration for the agent interface.</Description>
          <Navigation>Frontend::Agent::ModuleRegistration::Loader</Navigation>
          <Value>
@@ -66,28 +33,7 @@
              </Hash>
          </Value>
      </Setting>
-
-     <!--Confoguro el loader para el módulo de inventario(Administrador)-->
-     <Setting Name="Loader::Module::AdminInventario###002-Filename" Required="0" Valid="1">
-         <Description Translatable="1">Loader module registration for the admin interface.</Description>
-         <Navigation>Frontend::Agent::ModuleRegistration::Loader</Navigation>
-         <Value>
-             <Hash>
-                 <Item Key="CSS">
-                     <Array>
-                     </Array>
-                 </Item>
-                 <Item Key="JavaScript">
-                     <Array>
-                     </Array>
-                 </Item>
-             </Hash>
-         </Value>
-     </Setting>
-     
-   
-    <!--Configuro el menú principal para que muestre el enlace al módulo administrativo de inventario-->
-     <Setting Name="Frontend::Navigation###AdminInventario###002-Filename" Required="0" Valid="1">
+    <Setting Name="Frontend::Navigation###AgentInventario###002-Filename" Required="0" Valid="1">
          <Description Translatable="1">Main menu item registration.</Description>
          <Navigation>Frontend::Agent::ModuleRegistration::MainMenu</Navigation>
          <Value>
@@ -100,16 +46,16 @@
                      <Hash>
                          <Item Key="Group">
                              <Array>
-                                 <Item>admin</Item>
+                                 <Item>Admin</Item>
                              </Array>
                          </Item>
                          <Item Key="GroupRo">
                              <Array>
                              </Array>
                          </Item>
-                         <Item Key="Description" Translatable="1">Inventario.</Item>
+                         <Item Key="Description" Translatable="1">Inventario</Item>
                          <Item Key="Name" Translatable="1">Inventario</Item>
-                         <Item Key="Link">Action=AdminInventario</Item>
+                         <Item Key="Link">Action=AgentInventario</Item>
                          <Item Key="LinkOption"></Item>
                          <Item Key="NavBar">Inventario</Item>
                          <Item Key="Type">Menu</Item>
@@ -122,4 +68,90 @@
          </Value>
      </Setting>
 
- </otrs_config>
+
+
+
+
+
+
+<!--
+        <Group>Inventario</Group>
+        <SubGroup>Frontend::Agent::AgentInventario</SubGroup>
+        <Setting>
+			<FrontendModuleReg>
+                <Title>Inventario</Title>
+                <Group>users</Group>
+                <Description>Inventario</Description>
+                <NavBarName>Inventario</NavBarName>
+                <NavBar>
+                    <Description>Inventario</Description>
+                    <Name>Inventario</Name>
+                    <Image>overview.png</Image>
+                    <Link>Action=AgentInventario</Link>
+                    <NavBar>Inventario</NavBar>
+                    <Type>Menu</Type>
+                    <Prio>8400</Prio>
+                    <Block>ItemArea</Block>
+                </NavBar>
+                <NavBar>
+                    <GroupRo>Inv</GroupRo>
+                    <Description>Explorer</Description>
+                    <Name>Explorer</Name>
+                    <Image>list.png</Image>
+                    <Link>Action=AgentInventario</Link>
+                    <Type></Type>
+                    <Block></Block>
+                    <NavBar>Centro de Acopio</NavBar>
+                    <AccessKey>c</AccessKey>
+                    <Prio>100</Prio>
+                </NavBar>				
+            </FrontendModuleReg>
+        </Setting>
+    </Setting>
+
+<Setting Name="Frontend::Output::FilterElementPost###Inventario" Required="0" Valid="1">
+        <Description Translatable="1">Define donde el link 'Centro de Acopio será mostrado'.</Description>
+        <Navigation>Frontend::Base::OutputFilter</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Module">Kernel::Output::HTML::FilterElementPost::Inventario</Item>
+                <Item Key="Debug">0</Item>
+                <Item Key="Templates">
+                    <Hash>
+                        <Item Key="AgentTicketClose">0</Item>
+                        <Item Key="AgentTicketCompose">0</Item>
+                        <Item Key="AgentTicketEmail">0</Item>
+                        <Item Key="AgentTicketEmailOutbound">0</Item>
+                        <Item Key="AgentTicketForward">0</Item>
+                        <Item Key="AgentTicketFreeText">10/Item>
+                        <Item Key="AgentTicketNote">1</Item>
+                        <Item Key="AgentTicketOwner">0</Item>
+                        <Item Key="AgentTicketPending">0</Item>
+                        <Item Key="AgentTicketPhone">1</Item>
+                        <Item Key="AgentTicketPriority">0</Item>
+                        <Item Key="AgentTicketResponsible">0</Item>
+                    </Hash>
+                </Item>
+            </Hash>
+        </Value>
+    </Setting>
+
+
+
+
+	<Setting Name="Frontend::Output::FilterElementPre###Inventario" Required="0" Valid="1">
+		<Description Translatable="1">Defines where the 'Centro Acopio' link will be displayed.</Description>
+		<Group>Inventario</Group>
+		<SubGroup>Frontend::Agent</SubGroup>
+        <Setting>
+            <Hash>
+                <Item Key="Module">Kernel::Output::HTML::OutputFilterInventario</Item>
+                <Item Key="Debug">0</Item>
+                <Item Key="Templates">
+					<Item Key="AgentTicketPhone">1</Item>
+				</Item>
+			</Hash>
+		</Setting>
+	</Setting>
+</otrs_config>
+-->
