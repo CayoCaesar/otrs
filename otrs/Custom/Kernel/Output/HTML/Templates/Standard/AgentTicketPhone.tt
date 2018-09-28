@@ -220,7 +220,7 @@
                     <!--Aqui voy a colocar el acceso a centro de acopio-->
                     <label>Solicitud de Reemplazo</label>
                     <div class="Field">
-                    <a href="#" id="acopio" target=_blank onclick="window.open(this.href, this.target, 'width=300,height=400'); return false;">[ [% Translate("Centro de Acopio") | html %] ]</a>
+                    <a href="[%env(Baselink)%]?Action=AgentInventario" id="acopio" target=_blank>[ [% Translate("Centro de Acopio") | html %] ]</a>
                     </div>
                     <!--Aqui termina el campo de solitud de reemplazo-->
 

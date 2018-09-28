@@ -1,0 +1,12 @@
+# --
+ # Kernel/Output/HTML/Templates/Standard/AgentInventario.tt - overview
+ # Copyright (C) (year) (Jorge Hernandez) (jorge.hernandez@ex-cle.com)
+ # --
+ # This software comes with ABSOLUTELY NO WARRANTY.  For details, see
+ # the enclosed file COPYING for license information (GPL).  If you
+ # did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
+ # --
+ <h1>[% Translate("Overview") |  html %]: [% Translate("Inventario") %]</h1>
+ <p>
+     [% Data.Inventario |  Translate() |  html %]
+ </p>
