@@ -49,8 +49,18 @@ Core.App.Ready(function () {
     Core.Init.ExecuteInit('APP_MODULE');
     Core.Init.ExecuteInit('APP_MODULE_LATE');
 });
-
 //]]></script>
+
+<script type="text/javascript">
+"use strict";
+
+function frameInv(){
+    var InvFrame = '<iframe class="TextOption FAQ" src="' + Core.Config.Get('CGIHandle') + '?' + '' + 'Action=AgentInventario;"></iframe>';
+    Core.UI.Dialog.ShowContentDialog(InvFrame, '', '10px', 'Center', true);
+    return false;
+}
+</script>
+
 
 # Finally, unblock click events on the page again after all JavaScript was loaded and
 # executed. Put in an own block to make sure it is always run.
